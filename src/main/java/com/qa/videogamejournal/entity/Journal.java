@@ -28,4 +28,46 @@ public class Journal {
 		this.journalName = journalName;
 		this.entry = entry;
 	}
+	
+	public Integer getJournalId() {
+		return journalId;
+	}
+	
+	public void setJournalId(Integer journalId) {
+		this.journalId = journalId;
+	}
+	
+	public String getGameName() {
+		return gameName;
+	}
+	
+	public void setGameName(String gameName) {
+		this.gameName = gameName;
+	}
+	
+	public String getJournalName() {
+		return journalName;
+	}
+	
+	public void setJournalName(String journalName) {
+		this.journalName = journalName;
+	}
+	
+	public String getEntry() {
+		return entry;
+	}
+	
+	public void setEntry(String entry) {
+		this.entry = entry;
+	}
+	
+	@Override
+	public String toString() {
+		return "Journal{" +
+				"journalId=" + journalId +
+				", gameName='" + gameName + '\'' +
+				", journalName='" + journalName + '\'' +
+				", entry='" + entry + '\'' +
+				'}';
+	}
 }
