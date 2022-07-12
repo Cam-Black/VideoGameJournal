@@ -2,10 +2,14 @@
 <Diagram>
   <ID>JAVA</ID>
   <OriginalElement />
-  <nodes />
+  <nodes>
+    <node x="88.5" y="44.5">com.qa.videogamejournal.entity.Journal</node>
+    <node x="55.5" y="-15.0">com.qa.videogamejournal.controller.JournalController</node>
+    <node x="-81.5" y="44.5">com.qa.videogamejournal.repo.JournalRepo</node>
+  </nodes>
   <notes />
   <edges />
-  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="false" x="371.5" y="30.0" />
+  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="false" x="223.5" y="98.0" />
   <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
