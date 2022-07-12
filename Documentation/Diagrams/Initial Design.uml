@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="126.82156500717053" y="-14.21818482848083">com.qa.videogamejournal.service.JournalService</node>
+    <node x="1.5069908285012588" y="195.40989042510398">com.qa.videogamejournal.entity.Journal</node>
+    <node x="-99.44453508338255" y="82.6908296633941">com.qa.videogamejournal.service.JournalServiceDB</node>
+    <node x="-67.29969246301889" y="-8.427221187877684">com.qa.videogamejournal.repo.JournalRepo</node>
+    <node x="125.49597145681321" y="75.37040545619557">com.qa.videogamejournal.controller.JournalController</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Compact" zoom="0.9600000000000002" showDependencies="false" x="92.20833333333468" y="177.45833333333331" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
