@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @Sql(scripts = {"classpath:journal-schema.sql", "classpath:journal-data.sql"},
-		executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+	 executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 @ActiveProfiles("test")
 public class JournalControllerIntegrationTest {
 	@Autowired
@@ -34,7 +34,7 @@ public class JournalControllerIntegrationTest {
 		Journal createdJournal = new Journal(2, "Divinity", "Journal One", "Started game");
 		String createdJournalAsJSON = this.mapper.writeValueAsString(createdJournal);
 		this.mvc.perform(post("/journal/create").content(testJournalAsJSON)
-				.contentType(MediaType.APPLICATION_JSON))
+												.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isCreated())
 				.andExpect(content().json(createdJournalAsJSON));
 	}
