@@ -11,6 +11,10 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -41,6 +45,11 @@ public class JournalControllerIntegrationTest {
 	
 	@Test
 	void testListJournals() throws Exception {
-	
+		List<Journal> journals = new ArrayList<>();
+		journals.add(new Journal(1, "CoD", "Modern Warfare", "Shot enemies"));
+		String listAsJSON = this.mapper.writeValueAsString(journals);
+		this.mvc.perform(get("/journal/list-journals"))
+				.andExpect(content().json(listAsJSON))
+				.andExpect(status().isOk());
 	}
 }

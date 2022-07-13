@@ -5,6 +5,8 @@ import com.qa.videogamejournal.repo.JournalRepo;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Primary
 public class JournalServiceDB implements JournalService {
@@ -18,5 +20,10 @@ public class JournalServiceDB implements JournalService {
 	@Override
 	public Journal createJournal(Journal journal) {
 		return repo.save(journal);
+	}
+	
+	@Override
+	public List<Journal> listJournals() {
+		return repo.findAll();
 	}
 }
