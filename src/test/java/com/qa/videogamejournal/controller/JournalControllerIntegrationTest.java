@@ -55,6 +55,10 @@ public class JournalControllerIntegrationTest {
 	
 	@Test
 	void testGetJournal() throws Exception {
-	
+		Journal journal = new Journal(1, "CoD", "Modern Warfare", "Shot enemies");
+		String journalAsJSON = this.mapper.writeValueAsString(journal);
+		this.mvc.perform(get("/journal/get-journal/1"))
+				.andExpect(content().json(journalAsJSON))
+				.andExpect(status().isOk());
 	}
 }
