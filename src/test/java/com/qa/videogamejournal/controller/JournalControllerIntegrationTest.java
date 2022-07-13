@@ -14,8 +14,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -60,5 +59,10 @@ public class JournalControllerIntegrationTest {
 		this.mvc.perform(get("/journal/get-journal/1"))
 				.andExpect(content().json(journalAsJSON))
 				.andExpect(status().isOk());
+	}
+	
+	@Test
+	void testDeleteJournal() throws Exception {
+	
 	}
 }
