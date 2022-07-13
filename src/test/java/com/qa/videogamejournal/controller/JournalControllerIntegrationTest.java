@@ -62,6 +62,10 @@ public class JournalControllerIntegrationTest {
 	}
 	
 	@Test
+	void testUpdateJournal() {
+	
+	}
+	@Test
 	void testDeleteJournal() throws Exception {
 		this.mvc.perform(delete("/journal/delete/1"))
 				.andExpect(status().isNoContent());
