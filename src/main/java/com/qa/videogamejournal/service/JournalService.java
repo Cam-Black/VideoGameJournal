@@ -10,4 +10,6 @@ public interface JournalService {
 	List<Journal> listJournals();
 	
 	Journal getJournal(int id);
+	
+	void deleteJournal(int id);
 }

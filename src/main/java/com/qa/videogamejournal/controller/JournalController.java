@@ -32,4 +32,10 @@ public class JournalController {
 	public Journal getAJournal(@PathVariable("id") int id) {
 		return service.getJournal(id);
 	}
+	
+	@DeleteMapping("/journal/delete/{id}")
+	public ResponseEntity<?> deleteJournal(@PathVariable("id") int id) {
+		service.deleteJournal(id);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
 }

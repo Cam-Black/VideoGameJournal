@@ -31,4 +31,9 @@ public class JournalServiceDB implements JournalService {
 	public Journal getJournal(int id) {
 		return repo.findById(id).get();
 	}
+	
+	@Override
+	public void deleteJournal(int id) {
+		repo.deleteById(id);
+	}
 }
