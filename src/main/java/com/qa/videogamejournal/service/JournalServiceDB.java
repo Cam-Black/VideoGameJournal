@@ -26,4 +26,14 @@ public class JournalServiceDB implements JournalService {
 	public List<Journal> listJournals() {
 		return repo.findAll();
 	}
+	
+	@Override
+	public Journal getJournal(int id) {
+		return repo.findById(id).get();
+	}
+	
+	@Override
+	public void deleteJournal(int id) {
+		repo.deleteById(id);
+	}
 }

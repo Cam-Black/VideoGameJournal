@@ -4,10 +4,7 @@ import com.qa.videogamejournal.entity.Journal;
 import com.qa.videogamejournal.service.JournalService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +26,16 @@ public class JournalController {
 	@GetMapping("/journal/list-journals")
 	public List<Journal> listJournals() {
 		return this.service.listJournals();
+	}
+	
+	@GetMapping("/journal/get-journal/{id}")
+	public Journal getAJournal(@PathVariable("id") int id) {
+		return service.getJournal(id);
+	}
+	
+	@DeleteMapping("/journal/delete/{id}")
+	public ResponseEntity<?> deleteJournal(@PathVariable("id") int id) {
+		service.deleteJournal(id);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 }

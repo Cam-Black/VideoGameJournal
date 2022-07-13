@@ -8,4 +8,8 @@ public interface JournalService {
 	Journal createJournal(Journal journal);
 	
 	List<Journal> listJournals();
+	
+	Journal getJournal(int id);
+	
+	void deleteJournal(int id);
 }
