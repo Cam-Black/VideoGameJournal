@@ -52,4 +52,9 @@ public class JournalControllerIntegrationTest {
 				.andExpect(content().json(listAsJSON))
 				.andExpect(status().isOk());
 	}
+	
+	@Test
+	void testGetJournal() throws Exception {
+	
+	}
 }
