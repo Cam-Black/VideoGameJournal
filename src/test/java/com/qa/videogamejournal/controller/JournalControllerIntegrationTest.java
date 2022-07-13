@@ -38,4 +38,9 @@ public class JournalControllerIntegrationTest {
 				.andExpect(status().isCreated())
 				.andExpect(content().json(createdJournalAsJSON));
 	}
+	
+	@Test
+	void testListJournals() throws Exception {
+	
+	}
 }
