@@ -62,6 +62,16 @@ public class JournalControllerIntegrationTest {
 	}
 	
 	@Test
+	void testUpdateJournal() throws Exception {
+		Journal updatedJournal = new Journal(1,"Warcraft", "My character", "Created new Character");
+		String updatedAsJSON = this.mapper.writeValueAsString(updatedJournal);
+		this.mvc.perform(patch("/journal/update/1").content(updatedAsJSON)
+												   .contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(content().json(updatedAsJSON));
+	}
+	
+	@Test
 	void testDeleteJournal() throws Exception {
 		this.mvc.perform(delete("/journal/delete/1"))
 				.andExpect(status().isNoContent());
