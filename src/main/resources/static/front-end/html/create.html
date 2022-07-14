@@ -1,38 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" type="image/x-icon" href="../media/journal.png">
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/index.css">
-  <title>Video Game Journal</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
-          integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" type="image/x-icon" href="../media/journal.png">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/index.css">
+	<title>Video Game Journal</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+			integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-  <nav>
-    <a href="../../">Home</a>
-    <a href="./create.html">Create</a>
-    <a href="view.html">View</a>
-  </nav>
-  <main>
-    <form>
-      <label for="journalName">Journal Name</label>
-      <input type="text" id="journalName"><br>
-      <label for="gameName">Video Game</label>
-      <input type="text" id="gameName"><br>
-      <label >Entry</label><br>
-      <textarea type="text" id="entry" rows="4" cols="80"></textarea><br>
-      <button type="submit" id="create">Submit</button>
-      <button type="reset" id="reset">Clear</button>
-    </form>
-  </main>
-  <script src="../js/create.js"></script>
+	<nav>
+		<a href="../../">Home</a>
+		<a href="./create.html">Create</a>
+		<a href="view.html">View</a>
+	</nav>
+	<main class="container">
+		<div class="row">
+			<div class="col">
+				<form id="journal">
+					<label for="journalName">Journal Name</label>
+					<input type="text" id="journalName" required><br>
+					<label for="gameName">Video Game</label>
+					<input type="text" id="gameName" required><br>
+					<label>Entry</label><br>
+					<textarea type="text" id="entry" cols="80" rows="4" required></textarea><br>
+					<button type="submit" id="create">Submit</button>
+					<button type="reset">Clear</button>
+				</form>
+			</div>
+			<div class="col-6" id="journalOutput"></div>
+		</div>
+	</main>
+	<script src="../js/create.js"></script>
 </body>
 </html>
