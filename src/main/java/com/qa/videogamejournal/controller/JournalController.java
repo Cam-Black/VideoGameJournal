@@ -39,7 +39,6 @@ public class JournalController {
 	@PatchMapping("/journal/update/{id}")
 	public Journal updateJournal(@PathVariable("id") int id, @RequestBody Journal journal) {
 		Journal updated = repo.findById(id).get();
-		updated.setJournalId(id);
 		updated.setJournalName(journal.getJournalName());
 		updated.setGameName(journal.getGameName());
 		updated.setEntry(journal.getEntry());
