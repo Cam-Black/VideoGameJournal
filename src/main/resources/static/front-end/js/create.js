@@ -36,7 +36,7 @@ document.querySelector("#journal").addEventListener('submit', function(e) {
 			
 			const journalText = document.createElement("p");
 			journalText.className = "card-text";
-			journalText.innerHTML = res.data.entry;
+			journalText.innerText = res.data.entry;
 			journalBod.appendChild(journalText);
 			
 			output.appendChild(journalCard);
