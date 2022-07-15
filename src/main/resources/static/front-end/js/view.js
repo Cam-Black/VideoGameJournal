@@ -1,6 +1,20 @@
 "use strict";
 
 const journals = document.querySelector("#journalOutput");
+
+async function deleteJournal(id) {
+	await axios.delete("http://localhost:8080/journal/delete/" + id);
+}
+
+async function getMyJournal(id) {
+	await axios.get("http://localhost:8080/journal/get-journal/" + id)
+		.then(res => {
+			let data = res;
+			console.log(data);
+		})
+		.catch(err => console.error(err));
+}
+
 function renderJournals() {
 	axios.get("http://localhost:8080/journal/list-journals")
 		.then(res => {
@@ -41,15 +55,16 @@ function renderJournals() {
 				const journalView = document.createElement("button");
 				journalView.classList.add("btn", "btn-primary");
 				journalView.innerText = "View";
-				journalView.addEventListener('click', () => {
-					window.location.assign("../html/journal.html");
+				journalView.addEventListener('click', async function (e) {
+					sessionStorage.setItem("journalId", journal.journalId);
+					window.location.href = "../html/journal.html";
 				})
 				journalBtnDiv.appendChild(journalView);
 				
 				const journalDelete = document.createElement("button");
 				journalDelete.classList.add("btn", "btn-danger", "gap-2");
 				journalDelete.innerText = "Delete";
-				journalDelete.addEventListener('click', async function(e) {
+				journalDelete.addEventListener('click', async function (e) {
 					deleteJournal(journal.journalId);
 					e.target.parentElement.parentElement.remove();
 				});
@@ -61,8 +76,4 @@ function renderJournals() {
 		.catch(err => console.error(err));
 }
 
-async function deleteJournal(id) {
-	await axios.delete("http://localhost:8080/journal/delete/" + id);
-}
-
-renderJournals();
+window.location.href.endsWith("html/view.html") ? renderJournals() : getMyJournal(sessionStorage.getItem("journalId"));
