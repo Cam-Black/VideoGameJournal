@@ -6,8 +6,12 @@ function renderJournals() {
 		.then(res => {
 			console.log("RES:", res);
 			for (let journal of res.data) {
+				const journalCol = document.createElement("div");
+				journalCol.className = "col";
+				
 				const journalCard = document.createElement("div");
 				journalCard.className = "card";
+				journalCol.appendChild(journalCard);
 				
 				const journalBod = document.createElement("div");
 				journalBod.className = "card-body";
@@ -30,24 +34,28 @@ function renderJournals() {
 				journalText.innerText = arr[0] + ".";
 				journalBod.appendChild(journalText);
 				
+				const journalBtnDiv = document.createElement("div");
+				journalBtnDiv.classList.add("d-grid", "gap-2", "d-block");
+				journalBod.appendChild(journalBtnDiv);
+				
 				const journalView = document.createElement("button");
 				journalView.classList.add("btn", "btn-primary");
 				journalView.innerText = "View";
 				journalView.addEventListener('click', () => {
 					window.location.assign("../html/journal.html");
 				})
-				journalBod.appendChild(journalView);
+				journalBtnDiv.appendChild(journalView);
 				
 				const journalDelete = document.createElement("button");
-				journalDelete.classList.add("btn", "btn-danger");
+				journalDelete.classList.add("btn", "btn-danger", "gap-2");
 				journalDelete.innerText = "Delete";
 				journalDelete.addEventListener('click', async function(e) {
 					deleteJournal(journal.journalId);
 					e.target.parentElement.parentElement.remove();
 				});
-				journalBod.appendChild(journalDelete);
+				journalBtnDiv.appendChild(journalDelete);
 				
-				journals.appendChild(journalCard);
+				journals.appendChild(journalCol);
 			}
 		})
 		.catch(err => console.error(err));
