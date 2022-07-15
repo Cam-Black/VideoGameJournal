@@ -36,3 +36,5 @@ function getMyJournal(id) {
 }
 
 getMyJournal(sessionStorage.getItem("journalId"));
+
+document.querySelector("#goBack").addEventListener("click", () => history.back());
