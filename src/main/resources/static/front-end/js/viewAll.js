@@ -41,3 +41,25 @@ function enableSaveButton() {
 	saveButton.classList.remove("btn", "btn-outline-secondary", "disabled");
 	saveButton.classList.add("btn", "btn-secondary");
 }
+
+function disableSaveButton() {
+	const saveButton = document.querySelector("#saveJournal")
+	saveButton.classList.remove("btn", "btn-secondary");
+	saveButton.classList.add("btn", "btn-outline-secondary", "disabled");
+}
+async function updateMyJournal(id) {
+	const updatedJournalName = document.querySelector("#journalName").value;
+	const updatedGameName = document.querySelector("#gameName").value;
+	const updatedEntry = document.querySelector("#entry").value;
+	await axios.patch("http://localhost:8080/journal/update/" + id, {
+		journalName: updatedJournalName,
+		gameName: updatedGameName,
+		entry: updatedEntry
+	})
+	window.location.reload();
+	disableSaveButton();
+}
+
+document.querySelector("#saveJournal").addEventListener("click", async function() {
+	updateMyJournal(sessionStorage.getItem("journalId"));
+});

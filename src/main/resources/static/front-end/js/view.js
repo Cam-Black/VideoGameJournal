@@ -35,7 +35,7 @@ function renderJournals() {
 				const journalText = document.createElement("p");
 				journalText.className = "card-text";
 				let entry = journal.entry;
-				const arr = entry.split(". ");
+				const arr = entry.split(".");
 				journalText.innerText = arr[0] + ".";
 				journalBod.appendChild(journalText);
 				
