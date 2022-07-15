@@ -6,15 +6,6 @@ async function deleteJournal(id) {
 	await axios.delete("http://localhost:8080/journal/delete/" + id);
 }
 
-async function getMyJournal(id) {
-	await axios.get("http://localhost:8080/journal/get-journal/" + id)
-		.then(res => {
-			let data = res;
-			console.log(data);
-		})
-		.catch(err => console.error(err));
-}
-
 function renderJournals() {
 	axios.get("http://localhost:8080/journal/list-journals")
 		.then(res => {
@@ -76,4 +67,4 @@ function renderJournals() {
 		.catch(err => console.error(err));
 }
 
-window.location.href.endsWith("html/view.html") ? renderJournals() : getMyJournal(sessionStorage.getItem("journalId"));
+window.location.href.endsWith("html/view.html") ? renderJournals() : 0;
