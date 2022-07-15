@@ -1,33 +1,42 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" type="image/x-icon" href="../media/journal.png">
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/index.css">
-  <title>Video Game Journal</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
-          integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" type="image/x-icon" href="../media/journal.png">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/index.css">
+	<title>Video Game Journal</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+			integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-  <nav>
-    <a href="../../">Home</a>
-    <a href="create.html">Create</a>
-    <a href="view.html">View</a>
-  </nav>
-  <main>
-    <section id="journalDisplay">
-      <button class="btn btn-primary" id="goBack">Back</button>
-      <button class="btn btn-danger" id="deleteJournal">Delete</button>
-    </section>
-  </main>
-  <script src="../js/view.js";></script>
-  <script src="../js/viewAll.js"></script>
+	<nav>
+		<a href="../../">Home</a>
+		<a href="create.html">Create</a>
+		<a href="view.html">View</a>
+	</nav>
+	<main>
+		
+		<section class="container" id="journalDisplay">
+			<button class="btn btn-primary" id="goBack">Back</button>
+			<div id="journal">
+				<h3>Journal Name: <input id="journalName"></span></h3>
+				<h4>Game Name: <span><input id="gameName"></span></h4>
+				
+				<textarea id="entry" style="resize: none;" rows="30" cols="180"></textarea><br>
+				<button class="btn btn-outline-secondary disabled" id="saveJournal">Save</button>
+				<button class="btn btn-danger" id="deleteJournal">Delete</button>
+			</div>
+		</section>
+	
+	</main>
+	<script src="../js/view.js" ;></script>
+	<script src="../js/viewAll.js"></script>
 </body>
 </html>

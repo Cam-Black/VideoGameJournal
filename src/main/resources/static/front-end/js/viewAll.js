@@ -4,44 +4,15 @@ function getMyJournal(id) {
 	axios.get("http://localhost:8080/journal/get-journal/" + id)
 		.then(res => {
 			console.log(res);
-			const journalSection = document.querySelector("#journalDisplay");
+
+			const journalName = document.querySelector("#journalName");
+			journalName.value = res.data.journalName;
 			
-			const journalDiv = document.createElement("div");
-			journalDiv.id = "journal";
-			journalDiv.addEventListener("input", () => {
-				enableSaveButton();
-			});
+			const gameName = document.querySelector("#gameName");
+			gameName.value = res.data.gameName;
 			
-			const journalTitle = document.createElement("h3");
-			journalTitle.innerText = "Journal Name: ";
-			journalDiv.appendChild(journalTitle);
-			
-			const journalTitleText = document.createElement("span");
-			journalTitleText.innerText = res.data.journalName;
-			journalTitleText.setAttribute("contenteditable", "true");
-			journalTitle.appendChild(journalTitleText);
-			
-			const journalSubtitle = document.createElement("h4");
-			journalSubtitle.innerText = "Game Name: ";
-			journalDiv.appendChild(journalSubtitle);
-			
-			const journalSubText = document.createElement("span");
-			journalSubText.innerText = res.data.gameName;
-			journalSubText.setAttribute("contenteditable", "true");
-			journalSubtitle.appendChild(journalSubText);
-			
-			const journalEntry = document.createElement("p");
+			const journalEntry = document.querySelector("#entry");
 			journalEntry.innerText = res.data.entry;
-			journalEntry.setAttribute("contenteditable", "true");
-			journalDiv.appendChild(journalEntry);
-			
-			const saveButton = document.createElement("button");
-			saveButton.classList.add("btn", "btn-secondary", "disabled");
-			saveButton.id = "saveJournal";
-			saveButton.innerText = "Save"
-			journalDiv.appendChild(saveButton);
-			
-			journalSection.appendChild(journalDiv);
 		})
 		.catch(err => console.error(err));
 }
@@ -63,6 +34,10 @@ document.querySelector("#deleteJournal").addEventListener("click", async functio
 
 document.querySelector("#goBack").addEventListener("click", () => goBack());
 
-const enableSaveButton = () => {
-	document.querySelector("#saveJournal").classList.remove("disabled");
+document.querySelector("#journal").addEventListener('input', enableSaveButton);
+
+function enableSaveButton() {
+	const saveButton = document.querySelector("#saveJournal")
+	saveButton.classList.remove("btn", "btn-outline-secondary", "disabled");
+	saveButton.classList.add("btn", "btn-secondary");
 }
