@@ -57,7 +57,7 @@ function renderJournals() {
 				journalDelete.innerText = "Delete";
 				journalDelete.addEventListener('click', async function (e) {
 					deleteJournal(journal.journalId);
-					e.target.parentElement.parentElement.remove();
+					e.target.parentElement.parentElement.parentElement.parentElement.remove();
 				});
 				journalBtnDiv.appendChild(journalDelete);
 				

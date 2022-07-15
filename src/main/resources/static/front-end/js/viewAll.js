@@ -14,16 +14,23 @@ function getMyJournal(id) {
 			journalTitle.innerText = "Journal Name: ";
 			journalDiv.appendChild(journalTitle);
 			
-			const journalTitleText = document.createElement("h3");
+			const journalTitleText = document.createElement("span");
 			journalTitleText.innerText = res.data.journalName;
-			journalDiv.appendChild(journalTitleText);
+			journalTitleText.setAttribute("contenteditable", "true");
+			journalTitle.appendChild(journalTitleText);
 			
 			const journalSubtitle = document.createElement("h4");
-			journalSubtitle.innerText = `Game Name: ${res.data.gameName}`;
+			journalSubtitle.innerText = "Game Name: ";
 			journalSection.appendChild(journalSubtitle);
+			
+			const journalSubText = document.createElement("span");
+			journalSubText.innerText = res.data.gameName;
+			journalSubText.setAttribute("contenteditable", "true");
+			journalSubtitle.appendChild(journalSubText);
 			
 			const journalEntry = document.createElement("p");
 			journalEntry.innerText = res.data.entry;
+			journalEntry.setAttribute("contenteditable", "true");
 			journalSection.appendChild(journalEntry);
 			
 			const saveButton = document.createElement("button");
@@ -38,6 +45,15 @@ function getMyJournal(id) {
 getMyJournal(sessionStorage.getItem("journalId"));
 
 function goBack() {
-	history.back();
+	window.location.href = "../html/view.html";
 }
+
+async function deleteJournal(id) {
+	await axios.delete("http://localhost:8080/journal/delete/" + id);
+}
+
+document.querySelector("#deleteJournal").addEventListener("click", async function() {
+	await deleteJournal(sessionStorage.getItem("journalId"));
+	goBack();
+})
 document.querySelector("#goBack").addEventListener("click", () => goBack());
