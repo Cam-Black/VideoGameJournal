@@ -7,8 +7,10 @@ function getMyJournal(id) {
 			const journalSection = document.querySelector("#journalDisplay");
 			
 			const journalDiv = document.createElement("div");
-			journalDiv.id = "journalTitle";
-			journalSection.appendChild(journalDiv);
+			journalDiv.id = "journal";
+			journalDiv.addEventListener("input", () => {
+				enableSaveButton();
+			});
 			
 			const journalTitle = document.createElement("h3");
 			journalTitle.innerText = "Journal Name: ";
@@ -21,7 +23,7 @@ function getMyJournal(id) {
 			
 			const journalSubtitle = document.createElement("h4");
 			journalSubtitle.innerText = "Game Name: ";
-			journalSection.appendChild(journalSubtitle);
+			journalDiv.appendChild(journalSubtitle);
 			
 			const journalSubText = document.createElement("span");
 			journalSubText.innerText = res.data.gameName;
@@ -31,13 +33,15 @@ function getMyJournal(id) {
 			const journalEntry = document.createElement("p");
 			journalEntry.innerText = res.data.entry;
 			journalEntry.setAttribute("contenteditable", "true");
-			journalSection.appendChild(journalEntry);
+			journalDiv.appendChild(journalEntry);
 			
 			const saveButton = document.createElement("button");
 			saveButton.classList.add("btn", "btn-secondary", "disabled");
+			saveButton.id = "saveJournal";
 			saveButton.innerText = "Save"
-			journalSection.appendChild(saveButton);
+			journalDiv.appendChild(saveButton);
 			
+			journalSection.appendChild(journalDiv);
 		})
 		.catch(err => console.error(err));
 }
@@ -52,8 +56,13 @@ async function deleteJournal(id) {
 	await axios.delete("http://localhost:8080/journal/delete/" + id);
 }
 
-document.querySelector("#deleteJournal").addEventListener("click", async function() {
+document.querySelector("#deleteJournal").addEventListener("click", async function () {
 	await deleteJournal(sessionStorage.getItem("journalId"));
 	goBack();
-})
+});
+
 document.querySelector("#goBack").addEventListener("click", () => goBack());
+
+const enableSaveButton = () => {
+	document.querySelector("#saveJournal").classList.remove("disabled");
+}
