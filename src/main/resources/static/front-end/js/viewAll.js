@@ -46,6 +46,7 @@ function disableSaveButton() {
 	const saveButton = document.querySelector("#saveJournal")
 	saveButton.classList.remove("btn", "btn-secondary");
 	saveButton.classList.add("btn", "btn-outline-secondary", "disabled");
+	saveButton.blur();
 }
 async function updateMyJournal(id) {
 	const updatedJournalName = document.querySelector("#journalName").value;
@@ -56,7 +57,6 @@ async function updateMyJournal(id) {
 		gameName: updatedGameName,
 		entry: updatedEntry
 	})
-	window.location.reload();
 	disableSaveButton();
 }
 
