@@ -9,7 +9,6 @@ async function deleteJournal(id) {
 function renderJournals() {
 	axios.get("http://localhost:8080/journal/list-journals")
 		.then(res => {
-			console.log("RES:", res);
 			for (let journal of res.data) {
 				const journalCol = document.createElement("div");
 				journalCol.className = "col";
@@ -55,16 +54,22 @@ function renderJournals() {
 				const journalDelete = document.createElement("button");
 				journalDelete.classList.add("btn", "btn-danger", "gap-2");
 				journalDelete.innerText = "Delete";
-				journalDelete.addEventListener('click', async function (e) {
-					deleteJournal(journal.journalId);
-					e.target.parentElement.parentElement.parentElement.parentElement.remove();
+				journalDelete.setAttribute("data-bs-toggle", "modal");
+				journalDelete.setAttribute("data-bs-target", "#deleteModal");
+				journalDelete.addEventListener("click", () => sessionStorage.setItem("journalId", journal.journalId));
+				document.querySelector("#deleteJournal").addEventListener("click", async function () {
+					await deleteAJournal();
 				});
 				journalBtnDiv.appendChild(journalDelete);
-				
 				journals.appendChild(journalCol);
 			}
 		})
 		.catch(err => console.error(err));
 }
 
-window.location.href.endsWith("html/view.html") ? renderJournals() : 0;
+async function deleteAJournal() {
+	await deleteJournal(sessionStorage.getItem("journalId"));
+	window.location.reload();
+}
+
+window.addEventListener("load", renderJournals)

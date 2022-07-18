@@ -3,8 +3,6 @@
 function getMyJournal(id) {
 	axios.get("http://localhost:8080/journal/get-journal/" + id)
 		.then(res => {
-			console.log(res);
-
 			const journalName = document.querySelector("#journalName");
 			journalName.value = res.data.journalName;
 			
@@ -61,5 +59,5 @@ async function updateMyJournal(id) {
 }
 
 document.querySelector("#saveJournal").addEventListener("click", async function() {
-	updateMyJournal(sessionStorage.getItem("journalId"));
+	await updateMyJournal(sessionStorage.getItem("journalId"));
 });
