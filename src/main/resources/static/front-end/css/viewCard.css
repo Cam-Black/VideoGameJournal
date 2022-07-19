@@ -1,21 +1,25 @@
 .card {
     margin-top: 37px;
 }
+
 .card-body {
-    background-color: rgb(224, 224, 224);
     padding: 20px;
 }
+
 .card-title {
+    text-align: center;
     font-weight: bold;
     font-size: 30px;
 }
 
 .card-subtitle {
+    text-align: center;
     font-size: 24px;
     font-weight: lighter;
 }
 
 .card-text {
+    text-align: center;
     padding-top: 10px;
     font-size: 18px;
     height: 80px;

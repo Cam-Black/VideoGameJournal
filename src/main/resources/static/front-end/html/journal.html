@@ -22,24 +22,59 @@
 			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-	<nav>
-		<a href="../../">Home</a>
-		<a href="create.html">Create</a>
-		<a href="view.html">View</a>
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+			<div class="row">
+				<ul class="navbar navbar-nav">
+					<div class="col">
+						<li class="nav-item">
+							<a class="nav-link" href="../../">Home</a>
+						</li>
+					</div>
+					<div class="col">
+						<li class="nav-item">
+							<a class="nav-link" href="create.html">Create</a>
+						</li>
+					</div>
+					<div class="col">
+						<li class="nav-item">
+							<a class="nav-link active" href="view.html">View</a>
+						</li>
+					</div>
+				</ul>
+			</div>
+		</div>
 	</nav>
 	<main>
 		<section class="container" id="journalDisplay">
-			<button class="btn btn-primary" id="goBack">Back</button>
-			<div id="journal">
-				<h3>Journal Name: <input id="journalName"></span></h3>
-				<h4>Game Name: <span><input id="gameName"></span></h4>
-				
-				<textarea id="entry" style="resize: none;" rows="30" cols="180"></textarea><br>
-				<button class="btn btn-outline-secondary disabled" id="saveJournal">Save</button>
-				<button class="btn btn-danger" id="openDeleteModal" data-bs-toggle="modal"
-						data-bs-target="#deleteModal">
-					Delete
-				</button>
+			<div class="card" id="journal">
+				<div class="card-body">
+					<div class="row">
+						<div class="card-title">
+							<button class="btn btn-primary" id="goBack">Back</button>
+							<h3>Journal Name: <span><input id="journalName"></span></h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="card-subtitle">
+							<h4>Game Name: <span><input id="gameName"></span></h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="card-text">
+							<textarea id="entry" cols="124" rows="20"></textarea><br>
+						</div>
+					</div>
+					<div class="row">
+						<div class="card-footer">
+							<button class="btn btn-outline-secondary disabled" id="saveJournal">Save</button>
+							<button class="btn btn-danger" id="openDeleteModal" data-bs-toggle="modal"
+									data-bs-target="#deleteModal">
+								Delete
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<div class="modal fade" id="deleteModal">

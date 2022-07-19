@@ -2,15 +2,15 @@
     margin-top: 37px;
     height: 44.2rem;
 }
-.card-body {
-    background-color: rgb(224, 224, 224);
-}
+
 .card-title {
+    text-align: center;
     font-weight: bold;
     font-size: 30px;
 }
 
 .card-subtitle {
+    text-align: center;
     font-size: 24px;
     font-weight: lighter;
 }

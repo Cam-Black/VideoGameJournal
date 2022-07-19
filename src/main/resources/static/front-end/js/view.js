@@ -70,7 +70,7 @@ function renderJournals() {
 					await deleteAJournal();
 				});
 				journalBtnDiv.appendChild(journalDelete);
-				journals.appendChild(journalCol);
+				journals.prepend(journalCol);
 			}
 		})
 		.catch(err => console.error(err));
