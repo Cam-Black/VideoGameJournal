@@ -1,9 +1,6 @@
 package com.qa.videogamejournal.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Journal {
@@ -12,6 +9,7 @@ public class Journal {
 	private Integer journalId;
 	private String gameName;
 	private String journalName;
+	@Column(columnDefinition = "TEXT")
 	private String entry;
 	
 	public Journal(){}
