@@ -27,3 +27,11 @@ figure img {
     height: 430px;
     width: 350px;
 }
+
+input {
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
