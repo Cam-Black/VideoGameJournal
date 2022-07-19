@@ -34,8 +34,17 @@ function renderJournals() {
 				const journalText = document.createElement("p");
 				journalText.className = "card-text";
 				let entry = journal.entry;
-				const arr = entry.split(".");
-				journalText.innerText = arr[0] + ".";
+				
+				if (entry.length < 60 && entry.includes(".")) {
+					journalText.innerText = entry;
+				}
+				else if (entry.length < 60 && !entry.includes(".")) {
+					journalText.innerText = entry + ".";
+				}
+				else {
+					journalText.innerText = entry.substring(0, 60) + "\u2026";
+				}
+				
 				journalBod.appendChild(journalText);
 				
 				const journalBtnDiv = document.createElement("div");
