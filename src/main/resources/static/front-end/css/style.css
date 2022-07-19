@@ -1,12 +1,11 @@
 body {
-    font-family: Helvetica;
+    font-family: Georgia;
     background-color: rgba(128, 143, 148, 0.8);
     text-align: center;
 }
 
 nav {
     font-size: 20px;
-    background-color: #778C96;
     border: black solid 1px;
 }
 
