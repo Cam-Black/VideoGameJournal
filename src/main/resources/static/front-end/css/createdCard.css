@@ -1,0 +1,21 @@
+.card {
+    margin-top: 37px;
+    height: 44.2rem;
+}
+.card-body {
+    background-color: rgb(224, 224, 224);
+}
+.card-title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.card-subtitle {
+    font-size: 24px;
+    font-weight: lighter;
+}
+
+.card-text {
+    padding-top: 10px;
+    font-size: 18px;
+}
