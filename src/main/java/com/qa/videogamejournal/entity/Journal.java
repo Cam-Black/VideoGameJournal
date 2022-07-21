@@ -14,16 +14,16 @@ public class Journal {
 	
 	public Journal(){}
 	
-	public Journal(Integer journalId, String gameName, String journalName, String entry) {
+	public Journal(Integer journalId, String journalName, String gameName,  String entry) {
 		this.journalId = journalId;
-		this.gameName = gameName;
 		this.journalName = journalName;
+		this.gameName = gameName;
 		this.entry = entry;
 	}
 	
-	public Journal(String gameName, String journalName, String entry) {
-		this.gameName = gameName;
+	public Journal(String journalName, String gameName, String entry) {
 		this.journalName = journalName;
+		this.gameName = gameName;
 		this.entry = entry;
 	}
 	
