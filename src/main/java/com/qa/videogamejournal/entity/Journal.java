@@ -63,8 +63,8 @@ public class Journal {
 	public String toString() {
 		return "Journal{" +
 				"journalId=" + journalId +
-				", gameName='" + gameName + '\'' +
 				", journalName='" + journalName + '\'' +
+				", gameName='" + gameName + '\'' +
 				", entry='" + entry + '\'' +
 				'}';
 	}
