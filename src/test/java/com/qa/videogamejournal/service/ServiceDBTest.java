@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootTest
 public class ServiceDBTest {
 	
@@ -29,5 +32,17 @@ public class ServiceDBTest {
 		Assertions.assertThat(this.service.createJournal(TEST_JOURNAL)).isEqualTo(TEST_SAVED_JOURNAL);
 		
 		Mockito.verify(this.repo, Mockito.times(1)).save(TEST_JOURNAL);
+	}
+	
+	@Test
+	void testListJournals() {
+		final List<Journal> TEST_JOURNAL_LIST = new ArrayList<>();
+		final Journal TEST_JOURNAL = new Journal(1, "My Character", "FFXIV", "Created Character");
+		TEST_JOURNAL_LIST.add(TEST_JOURNAL);
+		Mockito.when(this.repo.findAll()).thenReturn(TEST_JOURNAL_LIST);
+		
+		Assertions.assertThat(this.service.listJournals()).isEqualTo(TEST_JOURNAL_LIST);
+		
+		Mockito.verify(this.repo, Mockito.times(1)).findAll();
 	}
 }
