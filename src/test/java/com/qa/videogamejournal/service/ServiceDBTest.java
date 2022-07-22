@@ -58,17 +58,17 @@ public class ServiceDBTest {
 		Mockito.verify(this.repo, Mockito.times(1)).findById(1);
 	}
 	
-//	@Test
-//	void testDeleteJournal() {
-//		final Journal TEST_JOURNAL = new Journal(1, "My First Time", "Skyrim", "Finally got to the top of those " +
-//				"stairs... wait what is that thing?");
-//
-//		Mockito.when(this.repo.deleteById(1)).then();
-//
-//		Assertions.assertThat(this.service.deleteJournal(1)).isTrue();
-//
-//		Mockito.verify(this.repo, Mockito.times(1)).existsById(1);
-//	}
+	@Test
+	void testDeleteJournal() {
+		final Journal TEST_JOURNAL = new Journal(1, "My First Time", "Skyrim", "Finally got to the top of those " +
+				"stairs... wait what is that thing?");
+
+		Mockito.when(this.repo.existsById(1)).thenReturn(false);
+
+		Assertions.assertThat(this.service.deleteJournal(1)).isTrue();
+
+		Mockito.verify(this.repo, Mockito.times(1)).existsById(1);
+	}
 	
 	@Test
 	void testUpdateJournal() {
