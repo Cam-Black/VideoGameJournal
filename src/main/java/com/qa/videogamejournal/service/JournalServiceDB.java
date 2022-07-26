@@ -14,6 +14,7 @@ public class JournalServiceDB implements JournalService {
 	private JournalRepo repo;
 	
 	public JournalServiceDB(JournalRepo repo) {
+		super();
 		this.repo = repo;
 	}
 	

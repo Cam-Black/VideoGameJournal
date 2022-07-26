@@ -12,9 +12,10 @@ public class Journal {
 	@Column(columnDefinition = "TEXT")
 	private String entry;
 	
-	public Journal(){}
+	public Journal(){super();}
 	
 	public Journal(Integer journalId, String gameName, String journalName, String entry) {
+		super();
 		this.journalId = journalId;
 		this.gameName = gameName;
 		this.journalName = journalName;
@@ -22,6 +23,7 @@ public class Journal {
 	}
 	
 	public Journal(String gameName, String journalName, String entry) {
+		super();
 		this.gameName = gameName;
 		this.journalName = journalName;
 		this.entry = entry;

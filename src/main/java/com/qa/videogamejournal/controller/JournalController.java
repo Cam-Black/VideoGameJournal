@@ -17,6 +17,7 @@ public class JournalController {
 	private JournalService service;
 	
 	public JournalController(JournalService service, JournalRepo repo) {
+		super();
 		this.service = service;
 		this.repo = repo;
 	}
