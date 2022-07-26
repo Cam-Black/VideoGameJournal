@@ -34,8 +34,9 @@ public class JournalServiceDB implements JournalService {
 	}
 	
 	@Override
-	public void deleteJournal(int id) {
+	public boolean deleteJournal(int id) {
 		repo.deleteById(id);
+		return !repo.existsById(id);
 	}
 	
 	@Override
