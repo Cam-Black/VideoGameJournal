@@ -7,8 +7,9 @@ public class Journal {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer journalId;
-	private String gameName;
 	private String journalName;
+	
+	private String gameName;
 	@Column(columnDefinition = "TEXT")
 	private String entry;
 	
