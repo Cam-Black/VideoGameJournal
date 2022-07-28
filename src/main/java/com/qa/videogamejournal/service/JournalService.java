@@ -11,7 +11,7 @@ public interface JournalService {
 	
 	Journal getJournal(int id);
 	
-	void deleteJournal(int id);
+	boolean deleteJournal(int id);
 	
 	Journal updateJournal(Journal journal);
 }

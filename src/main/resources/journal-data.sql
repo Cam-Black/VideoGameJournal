@@ -1,2 +1,2 @@
-INSERT INTO `journal` (game_name, journal_name, entry)
+INSERT INTO `journal` (journal_name, game_name, entry)
 VALUES ('CoD', 'Modern Warfare', 'Shot enemies');

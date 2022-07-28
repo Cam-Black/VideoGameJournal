@@ -32,9 +32,9 @@ public class JournalControllerIntegrationTest {
 	
 	@Test
 	void testCreateJournal() throws Exception {
-		Journal testJournal = new Journal("Divinity", "Journal One", "Started game");
+		Journal testJournal = new Journal("Journal One", "Divinity", "Started game");
 		String testJournalAsJSON = this.mapper.writeValueAsString(testJournal);
-		Journal createdJournal = new Journal(2, "Divinity", "Journal One", "Started game");
+		Journal createdJournal = new Journal(2, "Journal One", "Divinity", "Started game");
 		String createdJournalAsJSON = this.mapper.writeValueAsString(createdJournal);
 		this.mvc.perform(post("/journal/create").content(testJournalAsJSON)
 												.contentType(MediaType.APPLICATION_JSON))
@@ -63,7 +63,7 @@ public class JournalControllerIntegrationTest {
 	
 	@Test
 	void testUpdateJournal() throws Exception {
-		Journal updatedJournal = new Journal(1,"Warcraft", "My character", "Created new Character");
+		Journal updatedJournal = new Journal(1, "My character", "Warcraft", "Created new Character");
 		String updatedAsJSON = this.mapper.writeValueAsString(updatedJournal);
 		this.mvc.perform(patch("/journal/update/1").content(updatedAsJSON)
 												   .contentType(MediaType.APPLICATION_JSON))

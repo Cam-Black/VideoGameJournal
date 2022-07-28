@@ -17,6 +17,7 @@ public class JournalController {
 	private JournalService service;
 	
 	public JournalController(JournalService service, JournalRepo repo) {
+		super();
 		this.service = service;
 		this.repo = repo;
 	}
@@ -46,7 +47,6 @@ public class JournalController {
 		service.updateJournal(updated);
 		return updated;
 	}
-	
 	
 	@DeleteMapping("/journal/delete/{id}")
 	public ResponseEntity<?> deleteJournal(@PathVariable("id") int id) {
