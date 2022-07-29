@@ -21,7 +21,9 @@ public class Journal {
 	/**
 	 * Default constructor.
 	 */
-	public Journal(){}
+	public Journal(){
+		super();
+	}
 	
 	/**
 	 * Constructor to create a journal entity with all values passed in.
@@ -32,6 +34,7 @@ public class Journal {
 	 * @param entry TEXT field to store large amount of text, main body for the entry of a journal.
 	 */
 	public Journal(Integer journalId, String journalName, String gameName,  String entry) {
+		super();
 		this.journalId = journalId;
 		this.journalName = journalName;
 		this.gameName = gameName;
@@ -46,6 +49,7 @@ public class Journal {
 	 * @param entry TEXT field to store large amount of text, main body for the entry of a journal.
 	 */
 	public Journal(String journalName, String gameName, String entry) {
+		super();
 		this.journalName = journalName;
 		this.gameName = gameName;
 		this.entry = entry;
