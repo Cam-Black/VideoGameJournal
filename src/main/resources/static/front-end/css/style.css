@@ -1,0 +1,50 @@
+body {
+    font-family: Arial;
+    background-color: rgba(128, 143, 148, 0.8);
+}
+
+nav {
+    font-size: 20px;
+    border: black solid 1px;
+}
+
+header {
+    text-align: center;
+    border-top: none;
+    border-bottom: black solid 1px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #DDDDDD;
+}
+
+main {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+section#gettingStarted {
+    text-align: center;
+}
+
+.card-body {
+    background-color: rgb(224, 224, 224);
+}
+
+.card-footer {
+    text-align: center;
+}
+
+figure img {
+    text-align: center;
+    margin-top: 100px;
+    height: 430px;
+    width: 350px;
+}
+
+input {
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}

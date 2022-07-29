@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" type="image/x-icon" href="../media/journal.png">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+			crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/viewCard.css">
+	<title>Video Game Journal</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+			integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+			<div class="row">
+				<ul class="navbar navbar-nav">
+					<div class="col">
+						<li class="nav-item">
+							<a class="nav-link" href="../../">Home</a>
+						</li>
+					</div>
+					<div class="col">
+						<li class="nav-item">
+							<a class="nav-link" href="create.html">Create</a>
+						</li>
+					</div>
+					<div class="col">
+						<li class="nav-item">
+							<a class="nav-link active" href="">View</a>
+						</li>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main class="container">
+		<section>
+			<div class="col">
+				<div class="row row-cols-4 g-8" id="journalOutput"></div>
+			</div>
+		</section>
+	</main>
+	<div class="modal fade" id="deleteModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>Confirm</h3>
+					<button class="btn btn-close" id="crossClose" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<p>Are you sure you want to delete this entry?</p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button class="btn btn-danger" id="deleteJournal">Delete</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--	TODO Add search bar to filter through journals. -->
+	
+	<script src="../js/view.js"></script>
+</body>
+</html>
