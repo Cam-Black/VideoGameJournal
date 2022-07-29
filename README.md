@@ -7,12 +7,27 @@ characters have done what and their significance to the story?
 Well fear no more, for the Video Game Journal is here. This little web-app is designed to make creating journal
 entries about your favourite games easy, and help you get back into your favourite games quickly.
 
+- [Technologies Used](#technologies-used)
 - [Running Locally](#running-locally)
 - [How to Use](#how-to-use)
 - [Planning](#planning)
 - [Future Features](#future-features)
+- [Author](#author)
+- [License](#license)
 
 -------------------
+## Technologies Used
+For this project I utilised the following technologies:
+- Git and GitHub: Version Control,
+- Jira: Agile Scrum Board,
+- JUnit/Mockito: Testing,
+- Java/Spring: Back-End,
+- HTML and CSS: Building web pages with styling,
+- JavaScript: Adding interactiveness to web-pages,
+- Axios: API to send requests to Java/Spring Back-End
+
+-------------------
+
 ## Running Locally
 To get a local copy of the app up and running, you will need to have something capable of running a relational 
 database.
@@ -155,3 +170,11 @@ Here is a quick list with a brief description on what the feature/test will brin
   and create multiple entries under that one game to make it easier to track progress made in each game,
 - Create User Logins: This would allow to move the project from being a local copy only to being accessible online, 
   and users login and see their individual entries.
+
+-------------------
+## Author
+[Cameron Black](https://github.com/cam-black)
+
+-------------------
+## License
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
