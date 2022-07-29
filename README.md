@@ -10,6 +10,7 @@ entries about your favourite games easy, and help you get back into your favouri
 - [Running Locally](#running-locally)
 - [How to Use](#how-to-use)
 - [Planning](#planning)
+- [Future Features](#future-features)
 
 -------------------
 ## Running Locally
@@ -80,6 +81,7 @@ The clear button will also remove any data in the form and refocus the cursor ba
 already previous data on the right hand side, will also remove that as well.
 
 Now if you navigate to the View page, you will see a card with the entry you just created:
+
 ![](https://i.imgur.com/bp86OQi.png)
 
 If the text becomes too long in the entry, it will be cut off with `...` at the end to denote there is more text
@@ -99,3 +101,57 @@ The save button becomes active whenever a change is made.
 
 -------------------
 ## Planning
+To tackle this project I first developed a [MoSCoW document](Documentation/MoSCoW.md) to help decide what features to focus 
+my time on to 
+ensure that I was able to deliver an MVP by the deadline. This then helped me design my Jira board with User Stories 
+and tasks.
+From there, I was then able to create an ERD and an initial UML diagram, which can be found 
+[here](/Documentation/Diagrams).
+
+After the diagrams were generated, this allowed me to have a visual on what classes I need to build which let me 
+adopt Test Driven Development, as knowing what methods were needed, allowed me to write my tests first and then 
+create the methods needed to pass the tests.
+
+This allowed me to build a solid back-end, knowing that the code is doing exactly what I expect it to do, making it 
+easier to develop the project in an effective manner.
+
+After the back-end was developed, I then moved onto the front-end, starting with a wireframe to help me visualise 
+how I wanted it to look. 
+
+Once I had an idea of how I wanted the front-end to look, I focused on developing the functionality of 
+communicating between the front and back-end utilising Axios to send API requests to Spring.
+Initially, I was reusing a lot of code and was handling the creation of HTML elements inside JS for the `journal.
+html` page. After looking at how ineffective utilising a large amount of JS that was identical to another script, I 
+was able to break the page down, creating the HTML elements inside the HTML file itself, and then used JavaScript to 
+populate the elements, instead of creating them.
+
+This led to cleaner and easier to maintain code as it became easier to read, and allowed me to create other useful 
+methods without clogging up the script file. The `view.html` does still create the card elements, but this is due to 
+the nature of needing an unknown number of cards generated, so cannot hard code the right number of elements on the 
+page.
+
+After developing the core functionality, I moved onto styling the pages to make them look clean and user-friendly, 
+utilising Bootstrap to help with the styling, while overriding some defaults with my own custom CSS to get 
+the appearance I wanted.
+
+While using Bootstrap, I then discovered Modals, and this is where I then developed the pop-up to prevent accidental 
+deletion as all end-users, at some point in there life, will mis-click buttons, (I can't tell you the amount of 
+times I've clicked in the wrong place).
+
+When it all came together, I was left with a full-stack application, allowing users to create multiple journals for 
+multiple games, allowing them to store a large amount of text in the entry field.
+
+-------------------
+## Future Features
+
+Unfortunately, due to unforeseen circumstances, I was not able to try and tackle some other features/testing I would 
+have liked to try my hand at, but I will definitely be looking at implementing these features and tests. 
+
+Here is a quick list with a brief description on what the feature/test will bring:
+- SonarQube: Would allow me to analyse my code, and improve the code even further,
+- Selenium: Would allow me to create automated tests for the front-end to check the front-end is working as expected,
+- Relational Database: I would create further entities that would be linked together, to improve the journal system 
+  from the current multiple entries that are tied to one or more games, to allow users to select an individual game, 
+  and create multiple entries under that one game to make it easier to track progress made in each game,
+- Create User Logins: This would allow to move the project from being a local copy only to being accessible online, 
+  and users login and see their individual entries.
