@@ -13,8 +13,8 @@ import java.util.List;
 @RestController
 public class JournalController {
 	
-	private JournalRepo repo;
-	private JournalService service;
+	private final JournalRepo repo;
+	private final JournalService service;
 	
 	public JournalController(JournalService service, JournalRepo repo) {
 		super();
@@ -40,7 +40,8 @@ public class JournalController {
 	
 	@PatchMapping("/journal/update/{id}")
 	public Journal updateJournal(@PathVariable("id") int id, @RequestBody Journal journal) {
-		Journal updated = repo.findById(id).get();
+		Journal updated = repo.findById(id).orElse(null);
+		assert updated != null;
 		updated.setJournalName(journal.getJournalName());
 		updated.setGameName(journal.getGameName());
 		updated.setEntry(journal.getEntry());
