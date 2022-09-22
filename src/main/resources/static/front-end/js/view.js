@@ -3,11 +3,11 @@
 const journals = document.querySelector("#journalOutput");
 
 async function deleteJournal(id) {
-	await axios.delete("http://localhost:8080/journal/delete/" + id);
+	await axios.delete("/journal/delete/" + id);
 }
 
 function renderJournals() {
-	axios.get("http://localhost:8080/journal/list-journals")
+	axios.get("/journal/list-journals")
 		.then(res => {
 			for (let journal of res.data) {
 				const journalCol = document.createElement("div");

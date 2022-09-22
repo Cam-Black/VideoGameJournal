@@ -13,7 +13,7 @@ document.querySelector("#journal").addEventListener('submit', function(e) {
 		entry: this.entry.value
 	}
 	
-	axios.post("http://localhost:8080/journal/create", createBody)
+	axios.post("/journal/create", createBody)
 		.then(res => {
 			this.reset();
 			this.journalName.focus();

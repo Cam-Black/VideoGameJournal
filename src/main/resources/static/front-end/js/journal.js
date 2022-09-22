@@ -1,7 +1,7 @@
 "use strict";
 
 function getMyJournal(id) {
-	axios.get("http://localhost:8080/journal/get-journal/" + id)
+	axios.get("/journal/get-journal/" + id)
 		.then(res => {
 			const journalName = document.querySelector("#journalName");
 			journalName.value = res.data.journalName;
@@ -22,7 +22,7 @@ function goBack() {
 }
 
 async function deleteJournal(id) {
-	await axios.delete("http://localhost:8080/journal/delete/" + id);
+	await axios.delete("/journal/delete/" + id);
 }
 
 document.querySelector("#deleteJournal").addEventListener("click", async function () {
@@ -50,7 +50,7 @@ async function updateMyJournal(id) {
 	const updatedJournalName = document.querySelector("#journalName").value;
 	const updatedGameName = document.querySelector("#gameName").value;
 	const updatedEntry = document.querySelector("#entry").value;
-	await axios.patch("http://localhost:8080/journal/update/" + id, {
+	await axios.patch("/journal/update/" + id, {
 		journalName: updatedJournalName,
 		gameName: updatedGameName,
 		entry: updatedEntry

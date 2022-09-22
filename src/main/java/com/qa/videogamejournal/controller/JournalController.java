@@ -11,6 +11,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
+@RequestMapping("/journal")
 public class JournalController {
 	
 	private final JournalRepo repo;
@@ -22,23 +23,23 @@ public class JournalController {
 		this.repo = repo;
 	}
 	
-	@PostMapping("/journal/create")
+	@PostMapping("/create")
 	public ResponseEntity<Journal> createJournal(@RequestBody Journal journal) {
 		Journal created = service.createJournal(journal);
 		return new ResponseEntity<>(created, HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/journal/list-journals")
+	@GetMapping("/list-journals")
 	public List<Journal> listJournals() {
 		return this.service.listJournals();
 	}
 	
-	@GetMapping("/journal/get-journal/{id}")
+	@GetMapping("/get-journal/{id}")
 	public Journal getAJournal(@PathVariable("id") int id) {
 		return service.getJournal(id);
 	}
 	
-	@PatchMapping("/journal/update/{id}")
+	@PatchMapping("/update/{id}")
 	public Journal updateJournal(@PathVariable("id") int id, @RequestBody Journal journal) {
 		Journal updated = repo.findById(id).orElse(null);
 		assert updated != null;
@@ -49,7 +50,7 @@ public class JournalController {
 		return updated;
 	}
 	
-	@DeleteMapping("/journal/delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<?> deleteJournal(@PathVariable("id") int id) {
 		service.deleteJournal(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
