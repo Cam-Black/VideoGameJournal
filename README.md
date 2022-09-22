@@ -71,7 +71,13 @@ CREATE SCHEMA videogamejournal;
 ```
 ![](https://i.imgur.com/0NDAsRd.png)
 
-The database is all set up and ready to go, now all that's left is to download and execute the jar file.
+The database is all set up and ready to go, now all that's left is to download and execute the jar file, which can be found [here](./VideoGameJournal-0.0.1-SNAPSHOT.jar).
+
+Once downloaded, simply navigate to the location you downloaded the file, then open a terminal in that location, (you can use cmd by adding `.cmd` to the end of the file path: `Drive_Letter\Download_Path.cmd` or use your own preferred terminal), then execute the following command:
+```
+java -jar VideoGameJournal-0.0.1-SNAPSHOT.jar
+```
+This will now run the backend for the project, now all you need to do is navigate to https://localhost:8080 and you will be greeted with the homepage, see below.
 
 -------------------
 
