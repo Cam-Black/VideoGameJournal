@@ -11,7 +11,7 @@ import java.util.List;
 @Primary
 public class JournalServiceDB implements JournalService {
 	
-	private JournalRepo repo;
+	private final JournalRepo repo;
 	
 	public JournalServiceDB(JournalRepo repo) {
 		super();
@@ -30,7 +30,7 @@ public class JournalServiceDB implements JournalService {
 	
 	@Override
 	public Journal getJournal(int id) {
-		return repo.findById(id).get();
+		return repo.findById(id).orElse(null);
 	}
 	
 	@Override
