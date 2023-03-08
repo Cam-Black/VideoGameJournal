@@ -1,6 +1,6 @@
 package com.qa.videogamejournal.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Entity for creating Journal table in database.
